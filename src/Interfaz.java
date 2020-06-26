@@ -1,16 +1,16 @@
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
 import java.awt.Toolkit;
+import java.awt.Dialog.ModalExclusionType;
 import java.awt.Window.Type;
 
 public class Interfaz extends JFrame {
@@ -37,9 +37,11 @@ public class Interfaz extends JFrame {
 	 * Create the frame.
 	 */
 	public Interfaz() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\germa\\eclipse-workspace\\Desafio\\imgs\\app_images\\unnamed.png"));
+		setType(Type.UTILITY);
+		setTitle("Bienvenido al Desafio de Programaci\u00F3n de SIMU");
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Interfaz.class.getResource("unnamed.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 455, 305);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -63,9 +65,8 @@ public class Interfaz extends JFrame {
 		lbl_desafio_progra.setBounds(141, 30, 151, 14);
 		contentPane.add(lbl_desafio_progra);
 		
-		JLabel lbl_background = new JLabel("New label");
-		lbl_background.setIcon(new ImageIcon("C:\\Users\\germa\\eclipse-workspace\\Desafio\\imgs\\app_images\\logo uca.png"));
-		lbl_background.setBounds(86, 75, 272, 74);
+		JLabel lbl_background = new JLabel(new ImageIcon(getClass().getResource("logo uca.png")));
+		lbl_background.setBounds(70, 73, 297, 93);
 		contentPane.add(lbl_background);
 	}
 }
