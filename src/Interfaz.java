@@ -5,45 +5,23 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
-import javax.swing.border.EmptyBorder;
 
 public class Interfaz extends JFrame {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-	/*public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Interfaz frame = new Interfaz();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}*/
-
-	/**
-	 * Create the frame.
-	 */
 	public Interfaz() {
+		setResizable(false);
 		setType(Type.UTILITY);
 		setTitle("Bienvenido al Desafio de Programaci\u00F3n de SIMU");
-		//setIconImage(Toolkit.getDefaultToolkit().getImage(Interfaz.class.getResource("unnamed.png")));
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 455, 305);
 		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBorder(null);
 		setContentPane(contentPane);
 		
 		JButton btn_entrar = new JButton("Entrar");
@@ -68,7 +46,22 @@ public class Interfaz extends JFrame {
 		contentPane.add(lbl_desafio_progra);
 		
 		JLabel lbl_background = new JLabel(new ImageIcon(Interfaz.class.getResource("/images/logo uca.png")));
-		lbl_background.setBounds(70, 73, 297, 93);
+		lbl_background.setBounds(70, 55, 297, 93);
 		contentPane.add(lbl_background);
+		
+		JButton btnNewButton = new JButton("\u00BFQu\u00E9 estoy viendo?");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				JOptionPane.showMessageDialog(null, "En términos generales, cada estudiante construirá un software interactivo a su creatividad y originalidad\r\n" + 
+						"que exponga el proceso completo de aplicación del MEF a un sistema de ecuaciones.");
+			}
+		});
+		btnNewButton.setBounds(175, 179, 89, 23);
+		contentPane.add(btnNewButton);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(Interfaz.class.getResource("/images/2670393.jpg")));
+		lblNewLabel.setBounds(0, 0, 439, 266);
+		contentPane.add(lblNewLabel);
 	}
 }

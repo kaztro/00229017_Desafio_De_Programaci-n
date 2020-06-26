@@ -11,38 +11,17 @@ import javax.swing.border.EmptyBorder;
 
 public class Visor extends javax.swing.JFrame {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	private JPanel contentPane;
 	
-	ImageIcon Imagen[] = new ImageIcon[3/*13*/];
+	ImageIcon Imagen[] = new ImageIcon[21/*13*/];
 	int cont = 1;
 
-	/**
-	 * Launch the application.
-	 */
-	/*public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Visor frame = new Visor();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}*/
-
-	/**
-	 * Create the frame.
-	 */
 	public Visor() {
-		setTitle("Visor de im\u00E1genes");
+		setResizable(false);
 		setType(Type.UTILITY);
+		setTitle("Visor de im\u00E1genes");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 754, 547);
 		contentPane = new JPanel();
@@ -55,7 +34,7 @@ public class Visor extends javax.swing.JFrame {
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(lblNewLabel);
 		
-		for(int i = 1; i < 2/*12*/; i++) {
+		for(int i = 1; i < 21; i++) {
 			Imagen[i] = new ImageIcon(getClass().getResource("/images/img_" + i + ".png"));
 		}
 		lblNewLabel.setIcon(Imagen[1]);
@@ -64,7 +43,7 @@ public class Visor extends javax.swing.JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(cont == 1) {
-					cont = 1/*11*/;
+					cont = 21;
 				} cont--;
 				lblNewLabel.setIcon(Imagen[cont]);
 			}
@@ -75,7 +54,7 @@ public class Visor extends javax.swing.JFrame {
 		JButton btnNewButton_1 = new JButton("Seguir");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(cont == 1) {
+				if(cont == 21) {
 					cont = 0;
 				} cont++;
 				lblNewLabel.setIcon(Imagen[cont]);
@@ -85,7 +64,7 @@ public class Visor extends javax.swing.JFrame {
 		contentPane.add(btnNewButton_1);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon(Visor.class.getResource("/images/2670393.jpg")));
+		lblNewLabel_1.setIcon(new ImageIcon(Visor.class.getResource("/images/9874.png")));
 		lblNewLabel_1.setBounds(0, 0, 738, 508);
 		contentPane.add(lblNewLabel_1);
 	}
