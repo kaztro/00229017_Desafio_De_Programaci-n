@@ -1,5 +1,3 @@
-import java.awt.EventQueue;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -13,12 +11,16 @@ import javax.swing.border.EmptyBorder;
 
 public class Interfaz extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -29,7 +31,7 @@ public class Interfaz extends JFrame {
 				}
 			}
 		});
-	}
+	}*/
 
 	/**
 	 * Create the frame.
@@ -37,8 +39,8 @@ public class Interfaz extends JFrame {
 	public Interfaz() {
 		setType(Type.UTILITY);
 		setTitle("Bienvenido al Desafio de Programaci\u00F3n de SIMU");
-		setIconImage(Toolkit.getDefaultToolkit().getImage(Interfaz.class.getResource("unnamed.png")));
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//setIconImage(Toolkit.getDefaultToolkit().getImage(Interfaz.class.getResource("unnamed.png")));
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 455, 305);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -48,6 +50,8 @@ public class Interfaz extends JFrame {
 		btn_entrar.setBounds(5, 233, 424, 23);
 		btn_entrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				Visor open = new Visor();
+				open.setVisible(true);
 			}
 		});
 		contentPane.setLayout(null);
@@ -63,7 +67,7 @@ public class Interfaz extends JFrame {
 		lbl_desafio_progra.setBounds(141, 30, 151, 14);
 		contentPane.add(lbl_desafio_progra);
 		
-		JLabel lbl_background = new JLabel(new ImageIcon(getClass().getResource("logo uca.png")));
+		JLabel lbl_background = new JLabel(new ImageIcon(Interfaz.class.getResource("/images/logo uca.png")));
 		lbl_background.setBounds(70, 73, 297, 93);
 		contentPane.add(lbl_background);
 	}
