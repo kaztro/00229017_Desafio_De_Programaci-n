@@ -8,6 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
+import java.awt.Font;
 
 public class Interfaz extends JFrame {
 
@@ -36,17 +37,19 @@ public class Interfaz extends JFrame {
 		contentPane.add(btn_entrar);
 		
 		JLabel lbl_bienvenida = new JLabel("\u00A1Bienvenido!");
+		lbl_bienvenida.setFont(new Font("Franklin Gothic Demi Cond", Font.PLAIN, 18));
 		lbl_bienvenida.setBounds(5, 5, 424, 14);
 		lbl_bienvenida.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(lbl_bienvenida);
 		
 		JLabel lbl_desafio_progra = new JLabel("DESAFIO DE PROGRAMACI\u00D3N");
+		lbl_desafio_progra.setFont(new Font("Franklin Gothic Heavy", Font.BOLD | Font.ITALIC, 23));
 		lbl_desafio_progra.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_desafio_progra.setBounds(141, 30, 151, 14);
+		lbl_desafio_progra.setBounds(35, 30, 381, 23);
 		contentPane.add(lbl_desafio_progra);
 		
 		JLabel lbl_background = new JLabel(new ImageIcon(Interfaz.class.getResource("/images/logo uca.png")));
-		lbl_background.setBounds(70, 55, 297, 93);
+		lbl_background.setBounds(72, 73, 297, 93);
 		contentPane.add(lbl_background);
 		
 		JButton btnNewButton = new JButton("\u00BFQu\u00E9 estoy viendo?");
@@ -56,7 +59,7 @@ public class Interfaz extends JFrame {
 						"que exponga el proceso completo de aplicación del MEF a un sistema de ecuaciones.");
 			}
 		});
-		btnNewButton.setBounds(175, 179, 89, 23);
+		btnNewButton.setBounds(82, 177, 287, 35);
 		contentPane.add(btnNewButton);
 		
 		JLabel lblNewLabel = new JLabel("");
