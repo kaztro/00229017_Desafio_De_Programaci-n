@@ -7,10 +7,15 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-public class Visor extends JFrame {
+public class Visor extends javax.swing.JFrame {
 
 	private JPanel contentPane;
+	
+	ImageIcon Imagen[] = new ImageIcon[13];
+	int cont = 1;
 
 	/**
 	 * Launch the application.
@@ -46,11 +51,32 @@ public class Visor extends JFrame {
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(lblNewLabel);
 		
+		for(int i = 1; i < 12; i++) {
+			Imagen[i] = new ImageIcon(getClass().getResource("/images/img_" + i + ".jpg"));
+		}
+		lblNewLabel.setIcon(Imagen[1]);
+		
 		JButton btnNewButton = new JButton("Regresar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(cont == 1) {
+					cont = 11;
+				} cont--;
+				lblNewLabel.setIcon(Imagen[cont]);
+			}
+		});
 		btnNewButton.setBounds(10, 460, 173, 37);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Seguir");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(cont == 11) {
+					cont = 0;
+				} cont++;
+				lblNewLabel.setIcon(Imagen[cont]);
+			}
+		});
 		btnNewButton_1.setBounds(544, 460, 173, 37);
 		contentPane.add(btnNewButton_1);
 		

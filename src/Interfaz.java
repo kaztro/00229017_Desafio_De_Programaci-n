@@ -1,4 +1,5 @@
 import java.awt.EventQueue;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -9,9 +10,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-import java.awt.Toolkit;
-import java.awt.Dialog.ModalExclusionType;
-import java.awt.Window.Type;
 
 public class Interfaz extends JFrame {
 
