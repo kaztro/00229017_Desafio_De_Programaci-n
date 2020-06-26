@@ -18,7 +18,7 @@ public class Visor extends javax.swing.JFrame {
 
 	private JPanel contentPane;
 	
-	ImageIcon Imagen[] = new ImageIcon[13];
+	ImageIcon Imagen[] = new ImageIcon[3/*13*/];
 	int cont = 1;
 
 	/**
@@ -55,8 +55,8 @@ public class Visor extends javax.swing.JFrame {
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(lblNewLabel);
 		
-		for(int i = 1; i < 12; i++) {
-			Imagen[i] = new ImageIcon(getClass().getResource("/images/img_" + i + ".jpg"));
+		for(int i = 1; i < 2/*12*/; i++) {
+			Imagen[i] = new ImageIcon(getClass().getResource("/images/img_" + i + ".png"));
 		}
 		lblNewLabel.setIcon(Imagen[1]);
 		
@@ -64,7 +64,7 @@ public class Visor extends javax.swing.JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(cont == 1) {
-					cont = 11;
+					cont = 1/*11*/;
 				} cont--;
 				lblNewLabel.setIcon(Imagen[cont]);
 			}
@@ -75,7 +75,7 @@ public class Visor extends javax.swing.JFrame {
 		JButton btnNewButton_1 = new JButton("Seguir");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(cont == 11) {
+				if(cont == 1) {
 					cont = 0;
 				} cont++;
 				lblNewLabel.setIcon(Imagen[cont]);
